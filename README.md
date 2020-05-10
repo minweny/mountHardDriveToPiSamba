@@ -56,4 +56,5 @@ sudo ufw allow samba
 ## Notes  
 How to change directory permissions in Linux  
 [https://www.pluralsight.com/blog/it-ops/linux-file-permissions]  
+[https://linuxize.com/post/linux-chown-command/] 
 
