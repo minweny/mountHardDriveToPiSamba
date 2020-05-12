@@ -1,5 +1,5 @@
 # mountHardDriveToPiSamba
-mountHardDriveToPiSamba
+mountHardDriveToPiSamba  
 
 Device: Raspberry Pi 4    
 OS: 2020-02-13-raspbian-buster-full.zip    
@@ -16,10 +16,17 @@ create one samba user: pi.
 
 ## make sure you have good power supply  
 [https://www.raspberrypi-spy.co.uk/2013/02/raspberry-pi-status-leds-explained/]  
+[https://elinux.org/R-Pi_Troubleshooting]  
 Power Status  
 The red power LEDs indicate that the Pi has an active power supply. In the Model A and Model B (rev 1) the LED is connected directly to the 3.3V supply. If it fails to light or flashes it indicates that there is a problem with the power supply.  
 
 In the later models (A+, B+, Pi 2 & Pi 3) the power LED is slightly more intelligent. it is connected to the 5V and will flash if the voltage drops below 4.63V.  
+
+## eject hard drive safely  
+[https://www.raspberrypi.org/forums/viewtopic.php?t=48110]  
+```
+sudo eject /dev/sda1
+```
 
 ## Steps
 
@@ -72,6 +79,10 @@ Finally, restart the Samba services with:
 sudo systemctl restart smbd
 sudo systemctl restart nmbd
 ```
+
+## summary  
+samba on raspberry pi is too slow. 2-10Mb/s. There is also problem when you eject hard drive.  
+It's only good for transfer some small documents.  
 
 ## Notes  
 How to change directory permissions in Linux  
