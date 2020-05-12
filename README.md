@@ -28,6 +28,10 @@ In the later models (A+, B+, Pi 2 & Pi 3) the power LED is slightly more intelli
 sudo eject /dev/sda1
 ```
 
+## problems  
+1. When you mount hard drive to /media/pidrive. It will show as /media/new volume    
+2. Permission changes    
+
 ## Steps
 
 1. disable auto mount  
