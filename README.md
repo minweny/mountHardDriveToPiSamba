@@ -1,22 +1,32 @@
 # mountHardDriveToPiSamba
 mountHardDriveToPiSamba
 
-Device: Raspberry Pi 4  
-OS: 2020-02-13-raspbian-buster-full.zip  
-Hard Drive Format: NTFS   
+Device: Raspberry Pi 4    
+OS: 2020-02-13-raspbian-buster-full.zip    
+Hard Drive Format: NTFS     
 
-How to auto mount ntfs at system start 
+How to auto mount ntfs at system start   
 [https://turbofuture.com/computers/Permanently-Mounting-a-USB-Harddrive-to-your-Raspberry-Pi] 
 
-create multiple samba users 
+create multiple samba users   
 [https://linuxize.com/post/how-to-install-and-configure-samba-on-ubuntu-18-04/] 
 
-create one samba user: pi.  
+create one samba user: pi.    
 [https://pimylifeup.com/raspberry-pi-samba/] 
+
+## make sure you have good power supply  
+[https://www.raspberrypi-spy.co.uk/2013/02/raspberry-pi-status-leds-explained/]  
+Power Status  
+The red power LEDs indicate that the Pi has an active power supply. In the Model A and Model B (rev 1) the LED is connected directly to the 3.3V supply. If it fails to light or flashes it indicates that there is a problem with the power supply.  
+
+In the later models (A+, B+, Pi 2 & Pi 3) the power LED is slightly more intelligent. it is connected to the 5V and will flash if the voltage drops below 4.63V.  
 
 ## Steps
 
-1. install ntfs-3g, mount, change owner  
+1. disable auto mount  
+[http://www.cpmspectrepi.uk/raspberry_pi/MoinMoinExport/MultipleUsbSticks.html#Raspbian_Wheezy.2FJessie_.28Desktop.2FHeadless.29_Methods]  
+
+2. install ntfs-3g, mount, change owner  
 For newest raspbian, there is no need to install ntfs-3g and mount hard drive 
 Your hard dive is mounted to /media/pi/New Volume, which doesn't work for samba. You need to remount anyway.  
 ```
@@ -44,7 +54,7 @@ sudo nano /etc/fstab
 sudo shutdown -r now
 ```
 
-2. edit smb.conf  
+3. edit smb.conf  
 ```
 sudo nano /etc/samba/smb.conf
 
